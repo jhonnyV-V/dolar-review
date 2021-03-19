@@ -19,7 +19,10 @@ function Display() {
         //the API is not mine, if you want to check the source is
         //https://api.exchangedyn.com/free/quotes/usdves
         externalApi.get()
-        .then((data)=> setData(data));
+        .then((data)=> {
+            console.log(data)
+            setData(data.data)
+        });
     }, [])
 
 
