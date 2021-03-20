@@ -2,8 +2,9 @@ import { Paper } from '@material-ui/core';
 import React from 'react';
 import { useEffect, useState } from 'react';
 import externalApi from '../services/externalApi'
-import { formatDate } from './Const'
+import { formatDate, formatNumber, Source } from './Const'
 import { makeStyles } from '@material-ui/core/styles';
+import BarChar from './BarChar/Barchar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Display() {
-    const [data, setData] = useState({})
+    const [data, setData] = useState({sources:[]})
+    const [today,setToday] = useState(formatDate(Date()))
     const classes = useStyles()
 
     useEffect(() => {
@@ -20,8 +22,18 @@ function Display() {
         //https://api.exchangedyn.com/free/quotes/usdves
         externalApi.get()
         .then((data)=> {
-            console.log(data)
-            setData(data.data)
+            let newData = {average:data.data.average,sources:data.data.sources}
+            let sourceData = Object.create(Source)
+            newData.sources.map((source)=>{
+                sourceData['' +source.name] = source.quote
+            })
+            sourceData.date = today
+            console.log(sourceData)
+            newData.sources = [sourceData]
+            /*if(newData.sources.length == 1){
+                newData.sources.push(sourceData)
+            }*/
+            setData(newData)
         });
     }, [])
 
@@ -30,10 +42,13 @@ function Display() {
         //for now this will be the only option available
         //i have planed a few more, like getting prices from a range of dates
         //using my own API that still in development but with also be open source
-        <Paper className={classes.root} >
-            <p>Fecha: {formatDate(Date())}</p>
-            <p>Promedio: {data.average}</p>
-        </Paper>
+        <>
+            <Paper className={classes.root} >
+                <p>Fecha: {today}</p>
+                <p>Promedio: {formatNumber(data.average)}</p>
+            </Paper>
+            <BarChar sources={data.sources} />
+        </>
     );
 }
 export default Display;
