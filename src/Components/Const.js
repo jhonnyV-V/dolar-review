@@ -26,3 +26,33 @@ export function getDate(year, month, day){
     let date = Date.UTC(year,month -1, day +1)
     return date
 }
+
+export function formatNumber(number){
+    if(isNaN(number)){
+        return 0
+    }
+    let formatedNumber = Number(number).toLocaleString('en-US')
+    let splitNumber = formatedNumber.split('.')
+    splitNumber[0] = splitNumber[0].replace(',','.')
+    formatedNumber = splitNumber.join(',')
+    return formatedNumber
+}
+
+export const Source = {
+    "date":"",
+    "DolarToday":"",
+    "AirTM (Sell)":"",
+    "AirTM (Market)":"",
+    "AirTM (Buy)":"",
+    "AKBFintech (Recommended)":"",
+    "AKBFintech (Original)":"",
+}
+
+export const colors = {
+    "DolarToday":'#ff0000',
+    "AirTM (Sell)":"#FF22aa",
+    "AirTM (Market)":"#aa95FF",
+    "AirTM (Buy)":"#22ff99",
+    "AKBFintech (Recommended)":"#0000ff",
+    "AKBFintech (Original)":"#ffff00"
+}
