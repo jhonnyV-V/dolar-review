@@ -15,8 +15,8 @@ const months = {
 // take as an imput  the result of new Date() and returns a formated date
 // example: formatDate('Fri Mar 19 2021') and returns '2021/03/19'
 export function formatDate(date){
-    let splitDate = date.split(' ')
-    let formatedDate = `${splitDate[3]}/${months[splitDate[1].toLowerCase()]}/${splitDate[2]}`
+    let splitDate = `${date}`.split(' ')
+    let formatedDate = `${splitDate[3]}-${months[splitDate[1].toLowerCase()]}-${splitDate[2]}`
     return formatedDate
 
 }
@@ -36,16 +36,6 @@ export function formatNumber(number){
     splitNumber[0] = splitNumber[0].replace(',','.')
     formatedNumber = splitNumber.join(',')
     return formatedNumber
-}
-
-export const Source = {
-    "date":"",
-    "DolarToday":"",
-    "AirTM (Sell)":"",
-    "AirTM (Market)":"",
-    "AirTM (Buy)":"",
-    "AKBFintech (Recommended)":"",
-    "AKBFintech (Original)":"",
 }
 
 export const colors = {

@@ -3,6 +3,7 @@ import Display from './Components/Display'
 import Header from './Components/Header'
 import { Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
+import './App.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
