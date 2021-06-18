@@ -1,31 +1,36 @@
 {
-  "name": "DolarReview",
+  "name": "dolar-review",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://jhonnyv-v.github.io/DolarReview",
+  "homepage": "https://jhonnyv-v.github.io/dolar-review",
   "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2",
     "@material-ui/core": "^4.11.3",
     "@material-ui/data-grid": "^4.0.0-alpha.31",
-    "@testing-library/jest-dom": "^4.1.2",
-    "@testing-library/react": "^9.3.0",
     "axios": "^0.21.1",
     "env-cmd": "^10.1.0",
     "popper.js": "^1.16.1",
-    "react": "^16.9.0",
-    "react-datepicker": "^3.6.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "^4.0.3",
-    "recharts": "^2.0.8"
+    "react-datepicker": "^3.6.0"
   },
   "scripts": {
     "start": "env-cmd -e development react-scripts start",
     "build": "env-cmd -e production react-scripts build",
+    "predeploy": "npm run-script build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
