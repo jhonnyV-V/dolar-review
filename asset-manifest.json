@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/dolar-review/static/css/main.51a712d6.chunk.css",
+    "main.css": "/dolar-review/static/css/main.e67d915e.chunk.css",
     "main.js": "/dolar-review/static/js/main.a7bb6e50.chunk.js",
     "main.js.map": "/dolar-review/static/js/main.a7bb6e50.chunk.js.map",
     "runtime-main.js": "/dolar-review/static/js/runtime-main.5dcd0df4.js",
@@ -8,13 +8,13 @@
     "static/js/2.75b2901e.chunk.js": "/dolar-review/static/js/2.75b2901e.chunk.js",
     "static/js/2.75b2901e.chunk.js.map": "/dolar-review/static/js/2.75b2901e.chunk.js.map",
     "index.html": "/dolar-review/index.html",
-    "static/css/main.51a712d6.chunk.css.map": "/dolar-review/static/css/main.51a712d6.chunk.css.map",
+    "static/css/main.e67d915e.chunk.css.map": "/dolar-review/static/css/main.e67d915e.chunk.css.map",
     "static/js/2.75b2901e.chunk.js.LICENSE.txt": "/dolar-review/static/js/2.75b2901e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5dcd0df4.js",
     "static/js/2.75b2901e.chunk.js",
-    "static/css/main.51a712d6.chunk.css",
+    "static/css/main.e67d915e.chunk.css",
     "static/js/main.a7bb6e50.chunk.js"
   ]
 }
