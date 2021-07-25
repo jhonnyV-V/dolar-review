@@ -28,13 +28,17 @@ export function getDate(year, month, day){
 }
 
 export const getBrowserLocale = () => navigator.language || 'en-US';
-const formatter =  new Intl.NumberFormat(getBrowserLocale(), { style: 'currency', currency: 'VES'})
+const vesFormatter =  new Intl.NumberFormat(getBrowserLocale(), { style: 'currency', currency: 'VES'})
+const usdFormatter =  new Intl.NumberFormat(getBrowserLocale(), { style: 'currency', currency: 'USD'})
 
-export function formatNumber(number){
+export function formatNumber(number, currency){
     if(isNaN(number)){
         return 0
     }
+    if(!currency || currency === 'VES'){
+        return vesFormatter.format(number)
+    }
 
-    return formatter.format(number)
+    return usdFormatter.format(number)
 
 }
