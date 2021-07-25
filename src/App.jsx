@@ -47,10 +47,10 @@ function App() {
 
   return (
     <div>
-      <Header/>
-      <div className={classes.root}>
-        <Container>
-          <BrowserRouter>
+      <BrowserRouter>
+        <Header/>
+        <div className={classes.root}>
+          <Container>
             <div>
               <ContextProvider value={{rows, data}}>
 
@@ -68,9 +68,9 @@ function App() {
 
               </ContextProvider>
             </div>
-          </BrowserRouter>
-        </Container>
-      </div>
+          </Container>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
