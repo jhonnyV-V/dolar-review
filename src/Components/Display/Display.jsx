@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(4),
         marginBottom: theme.spacing(4),
     },
+    tableContainer:{
+      marginBottom: theme.spacing(4),  
+    },
 }));
 
 function Display() {
@@ -33,6 +36,7 @@ function Display() {
                 last_update: source.last_retrieved
             });
         });
+        row.sort((a,b) => new Date(b.last_update) - new Date(a.last_update) )
         setRows(row)
         console.log(quotes.data);
     };
@@ -53,7 +57,7 @@ function Display() {
                     <Grid container justify='center'>
                         <Typography
                         variant='h5'>
-                            Fecha: {formatDate(Date())}
+                            Fecha: {formatDate(new Date(rows[0]?.last_update))}
                         </Typography>
                     </Grid>
                     <Grid container justify='center'>
@@ -64,7 +68,7 @@ function Display() {
                     </Grid>
                 </Grid>
             </Paper>
-            <DisplayTable rows={rows} />
+            <DisplayTable rows={rows} className={classes.tableContainer} />
         </>
     );
 }

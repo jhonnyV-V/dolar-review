@@ -1,7 +1,6 @@
 import { 
     Paper, 
-    Grid, 
-    Typography, 
+    Grid,  
     Table, 
     TableCell, 
     TableRow, 
@@ -12,12 +11,12 @@ import {
 } from '@material-ui/core';
 import { formatNumber } from '../Const'
 
-const DisplayTable = ({rows}) => {
+const DisplayTable = ({rows, ...others}) => {
   const isSmallScreen = useMediaQuery('(max-width:669px)');
 
   return(
 
-          <Grid container justify='center'>
+          <Grid container justify='center' {...others} >
             <TableContainer component={Paper}>
               <Table 
               size={isSmallScreen?'small': 'medium' } 

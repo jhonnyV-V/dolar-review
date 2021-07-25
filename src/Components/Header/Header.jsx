@@ -26,7 +26,7 @@ export default function ButtonAppBar() {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" className={classes.title} >
-                    DolarReview
+                    Dolar Review
                 </Typography>
             </Toolbar>
         </AppBar>
