@@ -4,8 +4,8 @@ import {
     Typography,
     makeStyles, 
 } from '@material-ui/core';
-import { useEffect, useState } from 'react';
-import externalApi from '../../services/externalApi';
+import { useContext } from 'react';
+import AppContext from '../../AppContext'; 
 import { formatDate, formatNumber } from '../Const';
 import DisplayTable from './DisplayTable';
 
@@ -21,30 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Display() {
     const classes = useStyles();
-    const [data, setData] = useState({sources:[]});
-    const [rows, setRows] = useState([]);
-
-    const loadContent = async () => {
-        const quotes = await externalApi.get();
-        setData(quotes.data);
-        let row = []
-        quotes.data.sources.forEach((source, index) =>{
-            row.push({
-                id: index,
-                name: source.name,
-                price: source.quote,
-                last_update: source.last_retrieved
-            });
-        });
-        row.sort((a,b) => new Date(b.last_update) - new Date(a.last_update) )
-        setRows(row)
-        console.log(quotes.data);
-    };
-    useEffect(() => {
-        //the API is not mine, if you want to check the source is
-        //https://api.exchangedyn.com/free/quotes/usdves
-        loadContent();
-    }, [])
+    const { rows, data } = useContext(AppContext)
 
         //for now this will be the only option available
         //i have planed a few more, like getting prices from a range of dates
