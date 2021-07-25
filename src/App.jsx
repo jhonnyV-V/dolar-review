@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { Container, makeStyles } from '@material-ui/core'
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './Components/Header/'
 import './App.css';
 

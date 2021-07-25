@@ -3,6 +3,10 @@ div .makeStyles-root-1, div .jss1 {
   padding: 4px;
 }
 
+div .makeStyles-root-7, div .jss7 {
+  padding: 0px;
+}
+
 /*
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
