@@ -1,6 +1,13 @@
 {
-  "short_name": "DolarReview",
-  "name": "DolarReview",
+  "short_name": "Dolar Review",
+  "name": "Dolar Review",
+  "icons": [
+    {
+      //"src": "https://www.scoms.com/media/12178/jobs.png",
+      //"sizes": "192x192",
+      //"type": "image/png"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
