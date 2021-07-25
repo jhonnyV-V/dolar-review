@@ -1,9 +1,12 @@
-import React from 'react';
-import Display from './Components/Display'
-import Header from './Components/Header'
-import { Container } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
+import React, { lazy, Suspense } from "react";
+import { Container, makeStyles } from '@material-ui/core'
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import Header from './Components/Header/'
 import './App.css';
+
+const Display = lazy(() => import('./Components/Display/'));
+//const Calculator = lazy(() => import('./Components/Calculator/'));
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +22,23 @@ function App() {
       <Header/>
       <div className={classes.root}>
         <Container>
-          <Display/>
+          <BrowserRouter>
+            <div>
+              <Route exact path="/">
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Display/>
+                </Suspense>
+              </Route>
+              {/*
+              <Route exact path="/Calculator">
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Calculator/>
+                </Suspense>
+              </Route>
+               */
+              }
+            </div>
+          </BrowserRouter>
         </Container>
       </div>
     </div>
