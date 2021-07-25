@@ -24,7 +24,7 @@ function App() {
         <Container>
           <BrowserRouter>
             <div>
-              <Route exact path="/">
+              <Route exact path="/dolar-review/">
                 <Suspense fallback={<div>Loading...</div>}>
                   <Display/>
                 </Suspense>
