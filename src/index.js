@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
-import * as serviceWorker from './serviceWorker';
-import { createMuiTheme, ThemeProvider, responsiveFontSizes,CssBaseline } from '@material-ui/core';
+import * as serviceWorker from './serviceWorkerRegistration';
+import { createMuiTheme, ThemeProvider, responsiveFontSizes, CssBaseline } from '@material-ui/core';
 
 const theme = responsiveFontSizes(
     createMuiTheme({
