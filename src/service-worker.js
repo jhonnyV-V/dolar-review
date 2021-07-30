@@ -72,3 +72,8 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+
+registerRoute(
+    process.env.REACT_APP_EXTERNAL_API,
+    new StaleWhileRevalidate(),
+  );
