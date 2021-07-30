@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     color: '#28a745',
   },
+  overflow: {
+    overflow: 'scroll',
+  },
 }));
 
 const CalculatePrice = ({calculate, options}) => {
@@ -76,7 +79,7 @@ const CalculatePrice = ({calculate, options}) => {
                     />
                 </Grid>
             </Grid>
-            <Grid container justify='center' item xs={9}> 
+            <Grid container justify='center' item xs={9} className={classes.overflow}> 
                 <Typography variant='h6' className={classes.amount}>
                     {calculate(provider,amount|| 0)}
                 </Typography>
